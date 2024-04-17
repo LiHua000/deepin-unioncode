@@ -68,6 +68,8 @@ void ShortCut::updateUi()
 
     for (auto id : ids) {
         QStringList valueList = d->shortcutItemMap.value(id);
+        if (valueList.isEmpty())
+            continue;
         QString description = valueList.first();
         QString shortcut = valueList.last();
 
