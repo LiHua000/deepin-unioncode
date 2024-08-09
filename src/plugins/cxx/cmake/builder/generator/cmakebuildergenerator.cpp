@@ -57,9 +57,9 @@ void CMakeBuilderGenerator::appendOutputParser(std::unique_ptr<AbstractOutputPar
     if (outputParser) {
         outputParser->takeOutputParserChain();
         outputParser->appendOutputParser(new AnsiFilterParser());
+        outputParser->appendOutputParser(new CMakeParser());
         outputParser->appendOutputParser(new GnuMakeParser());
         outputParser->appendOutputParser(new GccParser());
-        outputParser->appendOutputParser(new CMakeParser());
     }
 }
 
